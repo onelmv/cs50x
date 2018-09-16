@@ -21,10 +21,10 @@ int main(int argc, string argv[])
     {
         key = atoi(argv[1]);
 
-        if (key > 0) 
+        if (key > 0)
         {
-            string plain_text = get_string("plaintext: "); 
-            int len_text = strlen(plain_text);  
+            string plain_text = get_string("plaintext: ");
+            int len_text = strlen(plain_text);
 
             printf("ciphertext: ");
             for (int i = 0 ; i < len_text; i++)
@@ -51,7 +51,7 @@ char Encrypting(char c, int key)
 
         }
         else
-        {   
+        {
             //islower()
             return (c - 97 + key) % 26 + 97;
         }
