@@ -1,0 +1,59 @@
+
+
+body
+{
+
+    background-color: black;
+    text-align: center;
+    color: white;
+
+}
+
+.head
+{
+    background-color: grey;
+    text-align: center;
+
+}
+
+main
+{
+    margin-left:10%;
+    margin-right: 10%;
+}
+
+footer
+{
+    line-height: 10%;
+    font-size: 12px;
+    margin: 25%;
+}
+
+hr
+{
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: 25%;
+    margin-right: 25%;
+    border-style: inset;
+    border-width: 1px;
+    color: white;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  color: white;
+
+}
+
+li {
+  display: inline;
+
+}
+
+table
+{
+    margin-top: 5%;
+}
