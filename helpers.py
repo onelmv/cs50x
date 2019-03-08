@@ -1,5 +1,6 @@
 from nltk.tokenize import sent_tokenize
 
+
 def lines(a, b):
     """Return lines in both a and b"""
 
@@ -46,15 +47,18 @@ def substrings(a, b, n):
     s2 = []
     i = 0
 
+    # Storing a substrings
     for substr in a:
-            s1.append(a[i:i+n])
-            i += 1
+        s1.append(a[i:i+n])
+        i += 1
 
+    # Storing b substrings
     i = 0
     for substr in b:
         s2.append(b[i:i+n])
         i += 1
 
+    # Comparing substrings and ensure me that each substrig have n characters(len(l) == n )
     for l in s1:
         for m in s2:
             if l == m and len(l) == n:
