@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">First name</th>
+      <th scope="col">Last name</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Size</th>
+      <th scope="col">Receive our products</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in registry %}
+
+    <tr>
+      <td>{{row[0]}}</td>
+      <td>{{row[1]}}</td>
+      <td>{{row[2]}}</td>
+      <td>{{row[3]}}</td>
+
+      <td>
+        {# If for show a boostrap padge #}
+        {% if row[4] == "yes" %}
+          <span class="badge badge-success">YES</span>
+        {% elif row[4] == "" %}
+            <span class="badge badge-danger">NO</span>
+        {% endif %}
+      </td>
+    </tr>
+
+    {% endfor %}
+
+  </tbody>
+</table>
+
+{% endblock %}
