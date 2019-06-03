@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Finance
+{% endblock %}
+
+{% block main %}
+  
+    <table class="table table">
+      <thead>
+        <tr>
+          <th scope="col">Symbol</th>
+          <th scope="col">Name</th>
+          <th scope="col">Shares</th>
+          <th scope="col">Price</th>
+          <th scope="col">Total</th>
+        </tr>
+      </thead>
+      
+      <tfoot>
+          <tr>
+                <td colspan="4"></td>
+                <td><b>{{total}}</b></td>
+          </tr>
+      </tfoot>
+      
+      <tbody>  
+        <!-- Show transactions -->
+        {% for stock in stocks %}
+            <tr>
+              <td>{{stock['symbol']}}</td>
+              <td>{{stock['company']}}</td>
+              <td>{{stock['shares']}}</td>
+              <td>{{stock['price']}}</td>
+              <td>{{stock['value']}}</td>
+            </tr>
+        {% endfor %}
+          <tr>
+            <td>CASH</td>
+              <td colspan="3"></td>
+              <td><b>{{cash}}</b></td>
+          </tr>
+        </tbody>
+    </table>
+{% endblock %}

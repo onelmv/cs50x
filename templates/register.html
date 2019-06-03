@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <form action="/register" method="post" id="regsiter_form">
+        <div class="form-group" "need-validation">
+            <input autocomplete="off" autofocus class="form-control" id="username" name="username" placeholder="Username" type="text">
+            
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="password" placeholder="Password" type="password">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="confirmation" placeholder="Password confirmation" type="password">
+        </div>
+        <button class="btn btn-primary" type="submit">Register</button>
+    </form>
+    
+    
+    <script>
+    
+    // The preventDefault() method cancels the event if it is cancelable, 
+    // meaning that the default action that belongs to the event will not occur.
+    document.getElementById("regsiter_form").addEventListener("submit", function(event) {
+          event.preventDefault();
+    });
+    
+    // Checking function
+    document.getElementById("regsiter_form").onsubmit = function(event) {
+        
+        var username = document.getElementById("username").value;
+        
+        $.get('/check?username=' + username, function(result){
+            
+            if(result == false){
+                alert('User name already taken!');
+            }
+            else{
+                document.getElementById("regsiter_form").submit();
+            }
+        });
+      
+    };
+    
+    </script>
+{% endblock %}
